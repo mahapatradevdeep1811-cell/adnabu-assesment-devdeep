@@ -185,3 +185,4 @@ Steps:
 Expected Result:
 - Quantity updates correctly  
 - No duplicate entries are created  
+
