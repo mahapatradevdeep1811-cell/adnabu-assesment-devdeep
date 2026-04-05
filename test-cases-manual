@@ -1,17 +1,17 @@
 Test Cases – AdNabuTestStore
 ============================
 
-Precondition (Applicable for all test cases)
--------------------------------------------
-1. Open browser  
-2. Navigate to: https://adnabu-store-assignment1.myshopify.com  
-3. Enter store password: AdNabuQA  
-4. Click "Enter" to access the store  
+Precondition (applies to all test cases)
+---------------------------------------
+1. Open the browser  
+2. Go to: https://adnabu-store-assignment1.myshopify.com  
+3. Enter the store password: AdNabuQA  
+4. Click on "Enter" to access the store  
 
 ==================================================
 
 (A) Product Search
---------------
+------------------
 
 TC_01: Search with a valid keyword (Positive)
 --------------------------------------------
@@ -20,13 +20,13 @@ Severity: Critical
 Test Data: "iPhone"  
 
 Steps:
-1. Access the store using the precondition steps  
+1. Open the store using the steps above  
 2. Enter "iPhone" in the search bar  
-3. Click on the search button  
+3. Click on search  
 
 Expected Result:
-- Relevant products are displayed  
-- Results match the searched keyword  
+- Products related to "iPhone" should be displayed  
+- The results should not be empty  
 
 --------------------------------------------------
 
@@ -37,13 +37,13 @@ Severity: Major
 Test Data: "iPh"  
 
 Steps:
-1. Access the store using the precondition steps  
+1. Open the store  
 2. Enter "iPh" in the search bar  
-3. Click on the search button  
+3. Click on search  
 
 Expected Result:
-- Matching products are displayed  
-- Search works with partial input  
+- Products matching the partial keyword should be shown  
+- Search should still work even with incomplete input  
 
 --------------------------------------------------
 
@@ -54,13 +54,13 @@ Severity: Minor
 Test Data: "iphone"  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Enter keyword in lowercase  
-3. Click on the search button  
+1. Open the store  
+2. Enter "iphone" in lowercase  
+3. Click on search  
 
 Expected Result:
-- Search is case-insensitive  
-- Correct results are displayed  
+- Search should work regardless of letter case  
+- Correct products should still be displayed  
 
 --------------------------------------------------
 
@@ -71,118 +71,118 @@ Severity: Major
 Test Data: "xyz123ABC!@#$"  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Enter invalid keyword  
-3. Click on the search button  
+1. Open the store  
+2. Enter an invalid/random keyword  
+3. Click on search  
 
 Expected Result:
-- "No results found" message is displayed  
-- No unrelated products appear  
+- A message like "No results found" should be shown  
+- No unrelated products should appear  
 
 --------------------------------------------------
 
-TC_05: Search with empty input (Edge Case)
------------------------------------------
+TC_05: Search without entering anything (Edge Case)
+--------------------------------------------------
 Priority: Medium  
 Severity: Minor  
 Test Data: Empty input  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Leave the search bar empty  
-3. Click on the search button  
+1. Open the store  
+2. Leave the search field empty  
+3. Click on search  
 
 Expected Result:
-- Validation message is shown OR all products are displayed  
-- Application remains stable  
+- Either a validation message should be shown  
+  OR all products may be displayed (depending on design)  
+- Application should not crash  
 
 ==================================================
 
 (B) Add to Cart
------------
+---------------
 
-TC_01: Add an in-stock product to cart (Positive)
+TC_06: Add an in-stock product to cart (Positive)
 ------------------------------------------------
 Priority: High  
 Severity: Critical  
-Test Data: Product searched using "iPhone"  
+Test Data: Product from "iPhone" search  
 
 Steps:
-1. Access the store using the precondition steps  
+1. Open the store  
 2. Search for "iPhone"  
-3. Open any available product from results  
+3. Open any available product  
 4. Click on "Add to Cart"  
 
 Expected Result:
-- Product is added successfully  
-- Cart count is updated  
-- Product appears in the cart  
+- Product should be added successfully  
+- Cart count should increase  
+- Product should be visible in the cart  
 
 --------------------------------------------------
 
-TC_02: Add multiple different products (Positive)
+TC_07: Add multiple different products (Positive)
 ------------------------------------------------
 Priority: Medium  
 Severity: Major  
-Test Data: Product from "iPhone" search + another product  
+Test Data: Two different products  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Add a product from "iPhone" results  
-3. Add another product to cart  
+1. Open the store  
+2. Add one product to the cart  
+3. Add another product  
 
 Expected Result:
-- Both products are added  
-- Cart reflects correct items and count  
+- Both products should be added  
+- Cart should show correct number of items  
 
 --------------------------------------------------
 
-TC_03: Add out-of-stock product (Negative)
------------------------------------------
+TC_08: Try adding an out-of-stock product (Negative)
+---------------------------------------------------
 Priority: High  
 Severity: Major  
-Test Data: Any out-of-stock product  
+Test Data: Out-of-stock product  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Open an out-of-stock product  
+1. Open the store  
+2. Open a product that is out of stock  
 3. Click on "Add to Cart"  
 
 Expected Result:
-- Error message is displayed  
-- Product is not added to cart  
+- System should show a proper message  
+- Product should not be added to the cart  
 
 --------------------------------------------------
 
-TC_04: Add to cart without selecting required options (Negative)
+TC_09: Add to cart without selecting required options (Negative)
 ---------------------------------------------------------------
 Priority: Medium  
 Severity: Major  
-Test Data: Product with size/color options  
+Test Data: Product with size or color  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Open product with required options  
+1. Open the store  
+2. Open a product that has required options  
 3. Do not select any option  
 4. Click on "Add to Cart"  
 
 Expected Result:
-- Validation message is displayed  
-- Product is not added  
+- A validation message should be shown  
+- Product should not be added  
 
 --------------------------------------------------
 
-TC_05: Add same product multiple times (Edge Case)
--------------------------------------------------
+TC_10: Add the same product multiple times (Edge Case)
+-----------------------------------------------------
 Priority: Medium  
 Severity: Major  
-Test Data: Same product added repeatedly  
+Test Data: Same product  
 
 Steps:
-1. Access the store using the precondition steps  
-2. Click "Add to Cart" multiple times  
+1. Open the store  
+2. Add the same product multiple times  
 
 Expected Result:
-- Quantity updates correctly  
-- No duplicate entries are created  
-
+- Quantity should increase properly  
+- Duplicate entries should not be created  
