@@ -26,7 +26,6 @@ Sample inputs such as "iPhone", partial keywords, invalid inputs, and empty valu
 ## Project Structure
 
 * test-cases/test_cases.md → Contains all test cases
-* notes/bug_reports.md → Contains identified bugs
 * notes/assumptions.md → Lists assumptions made during testing
 
 ## Test Environment
