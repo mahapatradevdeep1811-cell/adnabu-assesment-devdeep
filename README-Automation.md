@@ -1,66 +1,58 @@
-# Automation Test – AdNabu Assignment
+# Automation Test – Setup and Execution
 
 ## Overview
 
-For this assignment, I automated a simple user flow on the AdNabu test store.
+I automated a simple flow where a user searches for a product and adds it to the cart.
+This section explains how to set up and run the script.
 
-The idea was to replicate what a normal user would do:
-search for a product and add it to the cart.
+## Prerequisites
 
-## What I automated
+Before running the test, make sure you have:
 
-* Open the website
-* Enter the store password
-* Search for a product (I used "iPhone" as an example)
-* Open a product from the results
-* Add the product to the cart
-* Verify that the product is added
+* Python installed (version 3.x)
+* Google Chrome browser
+* ChromeDriver installed and added to your system PATH
 
-## How I approached it
+## Setup Steps
 
-I kept the script simple and focused on readability.
-
-* Used functions for each step (search, add to cart, etc.)
-* Used explicit waits to handle dynamic loading
-* Avoided using time.sleep() to make the script more reliable
-
-## Setup
-
-1. Clone this repository:
+1. Clone the repository:
    git clone <your-repo-link>
 
-2. Navigate to the automation folder:
+2. Go to the automation folder:
    cd automation
 
-3. Install dependencies:
+3. Install the required dependency:
    pip install -r requirements.txt
 
-## How to run
+## How to Run the Test
 
-Run the script using:
+Run the script using the following command:
 
 python test_search_add_to_cart.py
 
-## What to expect
+## What Happens When You Run It
 
-If everything works fine:
+* The browser will open automatically
+* It will navigate to the test website
+* Enter the store password
+* Search for a product (currently set to "iPhone")
+* Open a product and add it to the cart
+* Then it will check if the product is present in the cart
 
-* Product will be added to the cart
-* Console will show:
-  "Product is present in cart"
-  "Test completed successfully"
+## Expected Output
 
-If something fails:
+If everything works correctly, you should see:
 
-* Error message will be printed
-* A screenshot (failure.png) will be saved
+* "Product is present in cart"
+* "Test completed successfully"
+
+In case of failure:
+
+* An error message will be printed in the console
+* A screenshot (failure.png) will be saved for reference
 
 ## Notes
 
-* I focused on keeping the solution simple rather than building a full framework
-* Only one scenario is automated as per the assignment instructions
-* The script can be extended later if needed
-
-## Author
-
-Devdeep Mahapatra
+* I used explicit waits instead of fixed delays to make the script more stable
+* The code is kept simple and easy to understand
+* Only one scenario is automated as per the assignment requirement
