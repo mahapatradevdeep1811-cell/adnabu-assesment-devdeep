@@ -9,7 +9,7 @@ This section explains how to set up and run the script.
 
 Before running the test, make sure you have:
 
-* Python installed (version 3.x)
+* Python installed (version 3.0)
 * Google Chrome browser
 * ChromeDriver installed and added to your system PATH
 
